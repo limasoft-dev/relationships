@@ -35,10 +35,10 @@
                             <x-dropdown-link :href="route('projects.create')">
                                 {{ __('Criar Projeto') }}
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('contact.create')">
+                            <x-dropdown-link :href="route('projects.my')">
                                 {{ __('Meus Projetos') }}
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('contact.create')">
+                            <x-dropdown-link :href="route('projects.index')">
                                 {{ __('Todos Projetos') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('contact.create')">
