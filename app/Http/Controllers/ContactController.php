@@ -43,7 +43,7 @@ class ContactController extends Controller
 
         auth()->user()->contact()->create($dados);
 
-        return redirect(route('contact.create'));
+        return redirect(route('contact.create'))->with('success', 'Contactos alterados com sucesso!');
     }
 
     /**
@@ -74,7 +74,7 @@ class ContactController extends Controller
 
         auth()->user()->contact()->update($dados);
 
-        return redirect(route('contact.create'));
+        return redirect(route('contact.create'))->with('success', 'Contactos alterados com sucesso!');
     }
 
     /**
