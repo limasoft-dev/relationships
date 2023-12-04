@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Contact;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -24,5 +25,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'António Andrade',
                 'email' => 'aandrade@app.pt',
             ]);
+        Project::factory(15)
+            ->create();
     }
 }
