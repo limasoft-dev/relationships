@@ -33,6 +33,24 @@ class ProjectController extends Controller
         return redirect()->route('projects.create')->with('success', 'Projeto Criado com sucesso!');
     }
 
+    public function edit(Project $project): View
+    {
+        return view('projects.edit', [
+            'project' => $project,
+        ]);
+    }
+
+    public function update(Request $request, Project $project): RedirectResponse
+    {
+        $dados = $this->validate($request, [
+            'nome' => 'required|max:255',
+            'estado' => 'required',
+        ]);
+        $project->update($dados);
+
+        return redirect()->route('projects.my')->with('success', 'Projeto Alterado com sucesso!');
+    }
+
     public function myProjects(): View
     {
         //dd(Auth::user()->projects);
