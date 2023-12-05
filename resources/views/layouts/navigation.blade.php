@@ -41,13 +41,16 @@
                             <x-dropdown-link :href="route('projects.index')">
                                 {{ __('Todos Projetos') }}
                             </x-dropdown-link>
-                            
+
 
 
                             <!-- Authentication -->
 
                         </x-slot>
                     </x-dropdown>
+                    <x-nav-link :href="route('teams.index')" :active="request()->routeIs('teams.index')">
+                        {{ __('Teams') }}
+                    </x-nav-link>
                 </div>
             </div>
 

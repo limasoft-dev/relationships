@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,11 @@ Route::middleware('auth')->group(function () {
     Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('projects.update');
     Route::get('/projects/{project}/nomear', [ProjectController::class, 'nomearView'])->name('projects.nomear');
     Route::put('/projects/nomear/{project}', [ProjectController::class, 'nomearUpdate'])->name('projects.nomear.update');
+
+    Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
+    Route::get('/teams/{team}/edit', [TeamController::class, 'edit'])->name('teams.edit');
+    Route::post('/teams/{team}/addmembers', [TeamController::class, 'addMembers'])->name('teams.addmembers');
+    Route::post('/teams/{team}/removemembers', [TeamController::class, 'removeMembers'])->name('teams.removemembers');
 });
 
 require __DIR__.'/auth.php';
