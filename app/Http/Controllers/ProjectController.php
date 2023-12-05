@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -49,6 +50,24 @@ class ProjectController extends Controller
         $project->update($dados);
 
         return redirect()->route('projects.my')->with('success', 'Projeto Alterado com sucesso!');
+    }
+
+    public function nomearView(Project $project): View
+    {
+        return view('projects.nomear', [
+            'project' => $project,
+            'users' => User::all(),
+        ]);
+    }
+
+    public function nomearUpdate(Request $request, Project $project): RedirectResponse
+    {
+        $dados = $this->validate($request, [
+            'user_id' => 'required',
+        ]);
+        $project->update($dados);
+
+        return redirect()->route('projects.my')->with('success', 'Projeto Afeto a outro user com sucesso!');
     }
 
     public function myProjects(): View

@@ -41,15 +41,8 @@
                             <x-dropdown-link :href="route('projects.index')">
                                 {{ __('Todos Projetos') }}
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('contact.create')">
-                                {{ __('Meus Projetos') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Alterar Projeto') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Nomear Responsável') }}
-                            </x-dropdown-link>
+                            
+
 
                             <!-- Authentication -->
 

@@ -38,6 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
     Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
     Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('projects.update');
+    Route::get('/projects/{project}/nomear', [ProjectController::class, 'nomearView'])->name('projects.nomear');
+    Route::put('/projects/nomear/{project}', [ProjectController::class, 'nomearUpdate'])->name('projects.nomear.update');
 });
 
 require __DIR__.'/auth.php';

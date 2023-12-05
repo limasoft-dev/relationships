@@ -17,8 +17,9 @@
                         @foreach ($projects as $project)
                             <div class="bg-gray-200 text-gray-700 px-2 col-span-2">{{$project->nome}}</div>
                             <div class="bg-gray-200 text-gray-700 px-2">{{$project->estado}}</div>
-                            <div class=" px-2">
+                            <div class=" px-2 mx-auto">
                                 <a href="{{route('projects.edit',$project)}}" class="bg-orange-200 text-orange-600 text-sm px-5 py-1 my-2 rounded-md shadow-xl mt-1 hover:bg-orange-300">Edit</a>
+                                <a href="{{route('projects.nomear',$project)}}" class="bg-orange-200 text-orange-600 text-sm px-5 py-1 my-2 rounded-md shadow-xl mt-1 hover:bg-orange-300">Nomear</a>
                             </div>
                         @endforeach
                     </div>
