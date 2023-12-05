@@ -19,8 +19,10 @@ class TeamController extends Controller
 
     public function edit(Team $team): View
     {
+        $chosen = $team->users()->pluck('id')->toArray();
+
         return view('teams.edit', [
-            'users' => User::all(),
+            'users' => User::query()->whereNotIn('id', $chosen)->get(),
             'team' => $team,
         ]);
     }
