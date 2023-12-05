@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Contact;
 use App\Models\Project;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -26,6 +27,8 @@ class DatabaseSeeder extends Seeder
                 'email' => 'aandrade@app.pt',
             ]);
         Project::factory(15)
+            ->create();
+        Team::factory(5)
             ->create();
     }
 }
